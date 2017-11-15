@@ -1,4 +1,4 @@
-(defproject clj-bart "0.1.0-SNAPSHOT"
+(defproject duniyahai "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -33,14 +33,14 @@
 
   ;; uberjar profile is to compile to Java
   :profiles {
-             :uberjar {:aot :all
-                       :hooks [leiningen.cljsbuild]}
+             :uberjar {:aot :all}
              :dev {:dependencies [[figwheel-sidecar "0.5.13"]
                                   [com.cemerick/piggieback "0.2.2"] ;; needed for nREPL
                                   [binaryage/dirac "1.2.16"]
                                   ]
                    :plugins [[lein-figwheel "0.5.13"]
                              [lein-doo "0.1.7"]]
+                   :resource-paths ["resources"]
                    }}
   :cljsbuild {:builds {:dev {:source-paths ["src/cljs"]
                             :figwheel {:on-jsload "duniyahai.core/mount-root"}
@@ -50,12 +50,11 @@
                                        :asset-path "js/out"
                                        :source-map-timestamp true}}
                        :prod {:source-paths ["src/cljs"]
-                              :figwheel false
-                              :compiler {:main duniyahai.core
+                              :compiler {
                                          :output-to "resources/public/js/app.js"
                                          :optimizations :advanced
-                                         :asset-path "js/out"
-                                         :pretty-print false
+                                         :pretty-print true
+                                         :pseudo-names true
                                          }}
                        }
 
