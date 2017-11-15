@@ -1,9 +1,21 @@
 (ns duniyahai.core
   (:require [reagent.core :as r]))
 
+(defn counter-ui []
+  (let [c (r/atom 0)]
+    (fn []
+      [:div
+       [:button
+        {:on-click (fn []
+                     (swap! c inc))}
+        "Increment"]
+       [:div (str "I am at " @c)]])))
+
 (defn root []
-  [:h1
-   "Rendered by reagent"])
+  [:div
+   [:h1
+    "Rendered by reagent"]
+   [counter-ui]])
 
 (defn mount-root []
   (r/render [root]

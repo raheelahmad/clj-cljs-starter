@@ -48,7 +48,7 @@
                    ;; for production (uberjar), resources will be kept separate.
                    :resource-paths ["resources"]
                    }}
-  :cljsbuild {:builds {:dev {:source-paths ["src/cljs"]
+  :cljsbuild {:builds {:dev {:source-paths ["src/cljs" "test/cljs"]
                             :figwheel {:on-jsload "duniyahai.core/mount-root"}
                             :compiler {:main duniyahai.core
                                        :output-to "resources/public/js/app.js"
