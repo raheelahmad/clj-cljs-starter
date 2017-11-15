@@ -10,10 +10,14 @@
                  [ring/ring-json "0.4.0"]
                  [compojure "1.6.0"]
                  [reagent "0.7.0"]]
+
   :min-lein-version "2.7.1"
+  ;; This is the jar that will be available in the target/uberjar
   :uberjar-name "duniyahai.jar"
+  ;; this is where the file where -main should be find
   :main duniyahai.core
 
+  ;; where the compiled JAR will be placed
   :target-path "target/%s"
 
   :plugins [[lein-cljsbuild "1.1.7"]] ;; compiler to JS
@@ -40,6 +44,8 @@
                                   ]
                    :plugins [[lein-figwheel "0.5.13"]
                              [lein-doo "0.1.7"]]
+                   ;; only include resources in dev (where assets are found)
+                   ;; for production (uberjar), resources will be kept separate.
                    :resource-paths ["resources"]
                    }}
   :cljsbuild {:builds {:dev {:source-paths ["src/cljs"]
