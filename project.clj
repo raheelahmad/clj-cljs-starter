@@ -9,7 +9,8 @@
                  [hiccup "1.0.5"]
                  [ring/ring-json "0.4.0"]
                  [compojure "1.6.0"]
-                 [reagent "0.7.0"]]
+                 [reagent "0.7.0"]
+                 [lein-doo "0.1.8"]]
 
   :min-lein-version "2.7.1"
   ;; This is the jar that will be available in the target/uberjar
@@ -43,7 +44,7 @@
                                   [binaryage/dirac "1.2.16"]
                                   ]
                    :plugins [[lein-figwheel "0.5.13"]
-                             [lein-doo "0.1.7"]]
+                             [lein-doo "0.1.8"]]
                    ;; only include resources in dev (where assets are found)
                    ;; for production (uberjar), resources will be kept separate.
                    :resource-paths ["resources"]
@@ -62,6 +63,12 @@
                                          :pretty-print true
                                          :pseudo-names true
                                          }}
+                       :test {:source-paths ["src/cljs" "test/cljs"]
+                              :compiler {:output-to "resources/public/js/testable.js"
+                                         :main cljs.maintests.testrunner
+                                         :optimizations :none
+                                         }
+                              }
                        }
 
               })

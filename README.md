@@ -12,6 +12,13 @@
   - can stop with `(.stop server)`
 - set up Figwheel server in the CLJS REPL
 
+## Testing
+
+- `cljs` tests are run
+  - xx--either in REPL: `(require 'cljs.maintests.testrunner)`, `(cljs.maintests.testrunner/run-all-tests)`--xx
+    - not working after setting up lein-doo
+  - or from command line: `lein doo phantom test` (here `test` is the build id from `project.clj` and `phantomjs` needs to be in $PATH)
+
 ## Deploying
 
 - JAR the CLJ: `lein clean`, `lein uberjar`

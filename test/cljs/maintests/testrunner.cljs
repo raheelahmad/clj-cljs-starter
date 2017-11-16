@@ -1,6 +1,8 @@
 (ns cljs.maintests.testrunner
-  (:require [cljs.test :refer-macros [run-tests]]
-            [cljs.maintests.core]))
+  (:require [cljs.maintests.core]
+            [doo.runner :refer-macros [doo-tests]]))
+
+(doo-tests 'cljs.maintests.core)
 
 (enable-console-print!)
 
