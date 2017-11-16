@@ -18,6 +18,9 @@
   - xx--either in REPL: `(require 'cljs.maintests.testrunner)`, `(cljs.maintests.testrunner/run-all-tests)`--xx
     - not working after setting up lein-doo
   - or from command line: `lein doo phantom test` (here `test` is the build id from `project.clj` and `phantomjs` needs to be in $PATH)
+- `clj` tests are run:
+  - in the REPL via cider test commands
+  - or via `lein test`
 
 ## Deploying
 
