@@ -11,6 +11,14 @@
 - start dev server in CLJ REPL: `(def server (-dev-main 9010))`
   - can stop with `(.stop server)`
 - set up Figwheel server in the CLJS REPL
+  - `:cljs/quit`
+  - `(use 'figwheel-sidecar/repl.api)`
+  - specify multiple builds with the config in `user.clj`
+    - `(def fig-config ...)`
+  - have figwheel watch multiple builds with `(start-figwheel fig-config)`
+  - at this point should have autoreloads working for both `dev` (app) and `devcards`
+  - if need to connect a REPL so that the editor can talk to the app: `(cljs-repl "dev")`
+  
 
 ## Testing
 

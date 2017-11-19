@@ -9,12 +9,15 @@
         {:on-click (fn []
                      (swap! c inc))}
         "Increment"]
-       [:div (str "I am at " @c)]])))
+       [:div (str "I am at " @c)]
+       [:div (str "I am at " @c)]
+       ]
+      )))
 
 (defn root []
   [:div
    [:h1
-    "Rendered by reagent"]
+    "Rendered by a Reagent component."]
    [counter-ui]])
 
 (defn mount-root []

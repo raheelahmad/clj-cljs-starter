@@ -9,9 +9,6 @@
             )
   (:gen-class))
 
-(defn foo []
-  (+ 3 5))
-
 (defn html-skeleton []
   (hiccup/html
    [:head

@@ -10,7 +10,8 @@
                  [ring/ring-json "0.4.0"]
                  [compojure "1.6.0"]
                  [reagent "0.7.0"]
-                 [lein-doo "0.1.8"]]
+                 [lein-doo "0.1.8"]
+                 [devcards "0.2.5-SNAPSHOT"]]
 
   :min-lein-version "2.7.1"
   ;; This is the jar that will be available in the target/uberjar
@@ -63,9 +64,19 @@
                                          :pretty-print true
                                          :pseudo-names true
                                          }}
+                       :devcards {:source-paths ["src/cljs" "test/cljs"]
+                                  :figwheel {:devcards true}
+                                  ;; May need to append cljs to all namespaces anyway
+                                  :compiler {:main cljs.maintests.browser-runner
+                                             :asset-path "js/devcards_out"
+                                             :output-to "resources/public/js/duniyahai_devcards.js"
+                                             :output-dir "resources/public/js/devcards_out"
+                                             :optimizations :none
+                                             :source-map-timestamp true}}
                        :test {:source-paths ["src/cljs" "test/cljs"]
                               :compiler {:output-to "resources/public/js/testable.js"
-                                         :main cljs.maintests.testrunner
+                                         :output-dir "resources/public/js/out_tests"
+                                         :main cljs.maintests.doo-runner
                                          :optimizations :none
                                          }
                               }

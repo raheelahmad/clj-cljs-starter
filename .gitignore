@@ -1,6 +1,10 @@
 .lein-repl*
+.lein-failures
 target
 out/
 .nrepl*
 .cljs*
 *.log
+
+duniyahai_devcards.js
+devcards_out
