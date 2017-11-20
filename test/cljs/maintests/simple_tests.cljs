@@ -1,5 +1,5 @@
 (ns cljs.maintests.simple-tests
-  (:require [duniyahai.core :as sut]
+  (:require [wellread.core :as sut]
             [devcards.core :as dc :refer-macros [defcard deftest defcard-rg]]
             [cljs.test :as t :refer-macros [is testing]]
             ))

@@ -1,5 +1,6 @@
-(ns duniyahai.core
+(ns wellread.core
   (:require [hiccup.core :as hiccup]
+            [hiccup.page :as page]
             [compojure.core :refer [defroutes GET]]
 
             [ring.adapter.jetty :as jetty]
@@ -10,16 +11,18 @@
   (:gen-class))
 
 (defn html-skeleton []
-  (hiccup/html
+  (page/html5
    [:head
-    [:title "Hiccup!"]
-    [:link {:rel "stylesheet" :type "text/css" :href "css/style.css"}]
-    ]
+    [:title "Well Read . org"]
+    [:link {:rel "stylesheet" :type "text/css" :href "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css"}]
+    [:link {:rel "stylesheet" :type "text/css" :href "css/style.css"}]]
    [:body
-    [:div {:id "app"}]
-    [:script {:src "js/app.js" :type "text/javascript"}]
-    [:script
-     "duniyahai.core.init();"]
+    [:section {:class "section"}
+     [:div {:class "container"}
+      [:div {:id "app"}]
+      [:script {:src "js/app.js" :type "text/javascript"}]
+      [:script
+       "wellread.core.init();"]]]
     ]))
 
 (defroutes app

@@ -1,6 +1,6 @@
 (ns cljs.maintests.cards.first-tests
   (:require [devcards.core :as dc :refer-macros [defcard deftest defcard-rg]]
-            [duniyahai.core :as sut]
+            [wellread.core :as sut]
             [cljs.test :as t :refer-macros [is testing]]
             ))
 
@@ -8,6 +8,6 @@
   (t/is (not-empty (sut/root))))
 
 (deftest mouse-test2-separate
-  (t/is (= 5 5)))
+  (t/is (= 5 9)))
 
 

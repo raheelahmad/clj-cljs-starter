@@ -1,8 +1,11 @@
-body {
-  font-family: sans-serif;
+@font-face {
+  font-family: 'BarlowCondensed';
+  src: url('fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf');
 }
 
-h1 {
-  font-size: 29px;
+body {
+  font-family: 'BarlowCondensed';
+  /* background-color: rgb(38, 42, 49); */
+  /* color: #DDD; */
 }
 
