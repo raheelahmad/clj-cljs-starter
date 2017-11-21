@@ -1,4 +1,4 @@
-(defproject duniyahai "0.1.0-SNAPSHOT"
+(defproject wellread "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -15,9 +15,9 @@
 
   :min-lein-version "2.7.1"
   ;; This is the jar that will be available in the target/uberjar
-  :uberjar-name "duniyahai.jar"
+  :uberjar-name "wellread.jar"
   ;; this is where the file where -main should be find
-  :main duniyahai.core
+  :main wellread.core
 
   ;; where the compiled JAR will be placed
   :target-path "target/%s"
@@ -51,8 +51,8 @@
                    :resource-paths ["resources"]
                    }}
   :cljsbuild {:builds {:dev {:source-paths ["src/cljs" "test/cljs"]
-                            :figwheel {:on-jsload "duniyahai.core/mount-root"}
-                            :compiler {:main duniyahai.core
+                            :figwheel {:on-jsload "wellread.core/mount-root"}
+                            :compiler {:main wellread.core
                                        :output-to "resources/public/js/app.js"
                                        :output-dir  "resources/public/js/out"
                                        :asset-path "js/out"
@@ -69,7 +69,7 @@
                                   ;; May need to append cljs to all namespaces anyway
                                   :compiler {:main cljs.maintests.browser-runner
                                              :asset-path "js/devcards_out"
-                                             :output-to "resources/public/js/duniyahai_devcards.js"
+                                             :output-to "resources/public/js/wellread_devcards.js"
                                              :output-dir "resources/public/js/devcards_out"
                                              :optimizations :none
                                              :source-map-timestamp true}}

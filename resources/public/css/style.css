@@ -9,3 +9,21 @@ body {
   /* color: #DDD; */
 }
 
+.ze-card {
+  width: 130px;
+  margin: 10px 5px;
+  border: 1px solid #9239A7;
+  border-radius: 4px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+.ze-card .header {
+  text-align: center;
+  height: 50px;
+  vertical-align: middle;
+}
+
