@@ -32,18 +32,18 @@
                                     "target"]
 
   :figwheel {:nrepl-port 7002
-             :css-dirs ["resources/public/css"]
-             :nrepl-middleware ["cemerick.piggieback/wrap-cljs-repl"]}
-
-  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+             :css-dirs ["resources/public/css"]}
 
   ;; uberjar profile is to compile to Java
   :profiles {
              :uberjar {:aot :all}
              :dev {:dependencies [[figwheel-sidecar "0.5.13"]
                                   [com.cemerick/piggieback "0.2.2"] ;; needed for nREPL
+                                  [org.clojure/tools.nrepl "0.2.10"]
                                   [binaryage/dirac "1.2.16"]
                                   ]
+                   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+
                    :plugins [[lein-figwheel "0.5.13"]
                              [lein-doo "0.1.8"]]
                    ;; only include resources in dev (where assets are found)

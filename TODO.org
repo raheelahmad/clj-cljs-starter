@@ -1,0 +1,4 @@
+* TODOs
+** TODO make API calls to fetch shelf for user
+** TODO make AJAX call to fetch shelf
+** TODO show carousel for reading, to read, read

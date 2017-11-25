@@ -1,3 +1,3 @@
-- js/
-- out/
-- wellread_out/
+-/resources/public/js/
+-out/
+-*wellread_out
