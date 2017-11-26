@@ -12,7 +12,7 @@
                  [reagent "0.7.0"]
                  [lein-doo "0.1.8"]
                  [devcards "0.2.5-SNAPSHOT"]
-                 [cprop "0.1.11"]]
+                 [environ "1.1.0"]]
 
   :min-lein-version "2.7.1"
   ;; This is the jar that will be available in the target/uberjar
@@ -23,7 +23,8 @@
   ;; where the compiled JAR will be placed
   :target-path "target/%s"
 
-  :plugins [[lein-cljsbuild "1.1.7"]] ;; compiler to JS
+  :plugins [[lein-cljsbuild "1.1.7"]
+            [lein-environ "1.1.0"]] ;; compiler to JS
 
   ;; find compilable files
   :source-paths ["src/clj" "src/cljs"]
@@ -38,7 +39,9 @@
   ;; uberjar profile is to compile to Java
   :profiles {
              :uberjar {:aot :all}
-             :dev {:dependencies [[figwheel-sidecar "0.5.13"]
+             :dev [:project/dev :local/dev]
+             :test [:local/test]
+             :project/dev {:dependencies [[figwheel-sidecar "0.5.13"]
                                   [com.cemerick/piggieback "0.2.2"] ;; needed for nREPL
                                   [org.clojure/tools.nrepl "0.2.10"]
                                   [binaryage/dirac "1.2.16"]
