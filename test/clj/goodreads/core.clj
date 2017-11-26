@@ -4,6 +4,7 @@
 
 (t/deftest test-url
   (t/is
-      (= (utils/build-url "b") "b")
-      ))
+   (= (utils/build-url {:path ["review" "list" "6437129"] :format "xml" :params "v=2"})
+      "https://www.goodreads.com/review/list/6437129.xml?key=k3y&v=2"
+    )))
 

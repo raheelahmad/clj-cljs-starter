@@ -1,5 +1,6 @@
 (ns wellread.goodreads.utils
-  (:require [environ.core :refer [env]]))
+  (:require [environ.core :refer [env]]
+            [clojure.string :as str]))
 
 (defn- goodread-key []
   (env :goodreads-key))
@@ -10,6 +11,12 @@
 ;; (defn shelves-url [user-id]
 ;;   (build-url ["reviews" "list" user-id]))
 
-(defn build-url [frags]
-  (env :goodreads-key))
+(defn build-url [{:keys [path format params]}]
+  (let [base "https://www.goodreads.com/"
+        key (env :goodreads-key)
+        path-str (str/join "/" path)
+        url (str base path-str)
+        q-params (str "key=" key "&" params)]
+    (str url "." format "?" q-params)))
+
 
