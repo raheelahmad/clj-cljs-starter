@@ -1,9 +1,10 @@
 * TODOs
 ** WORKING-ON set up goodreads key via env
 *** WORKING-ON figure out an env lib
-**** WORKING-ON try out https://github.com/tolitius/cprop
+**** DONE try out https://github.com/tolitius/cprop
+     CLOSED: [2017-11-25 Sat 17:59]
      Tried out env but required profiles.clj
-**** TODO access goodreads key
+**** WORKING-ON access goodreads key
 ** TODO make API calls to fetch shelf for user
 ** TODO make AJAX call to fetch shelf
 ** TODO show carousel for reading, to read, read

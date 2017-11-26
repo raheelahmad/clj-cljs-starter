@@ -1,6 +1,7 @@
 (ns wellread.core
   (:require [hiccup.core :as hiccup]
             [hiccup.page :as page]
+            [cprop.source :as env]
             [compojure.core :refer [defroutes GET]]
 
             [ring.adapter.jetty :as jetty]
@@ -35,6 +36,7 @@
    {:port (Integer. port)}))
 
 (defn -dev-main [port]
+  (println (str "loaded config: " (cprop.source/from-file "resources/dev-secrets.clj")))
   (jetty/run-jetty
    (-> #'app (resource/wrap-resource "public") wrap-reload)
    {:port (Integer. port) :join? false}))

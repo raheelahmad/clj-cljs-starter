@@ -1,6 +1,4 @@
-(ns dev)
-
-;; To be used with start-figwheel!
+;; To be used with start-figwheel! if you wanna watch for devcards as well
 (def fig-config
                   {:figwheel-options {}
                    :build-ids ["dev" "devcards"]
