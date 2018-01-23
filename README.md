@@ -12,7 +12,7 @@
   - can stop with `(.stop server)`
 - set up Figwheel server in the CLJS REPL
   - `:cljs/quit`
-  - `(use 'figwheel-sidecar/repl.api)`
+  - `(use 'figwheel-sidecar.repl-api)`
   - specify multiple builds with the config in `user.clj`
     - `(def fig-config ...)`
   - have figwheel watch multiple builds with `(start-figwheel fig-config)`
